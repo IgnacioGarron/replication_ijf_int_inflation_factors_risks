@@ -13,4 +13,4 @@ X<-as.matrix(X[-1,])
 
 X<-X[,order(colnames(X))]
 
-write.xlsx(data.frame(X),"../input/X.xlsx")
+write.xlsx(as.data.frame(X),"../input/X.xlsx",keepNA = TRUE, colNames = TRUE)

@@ -1,84 +1,143 @@
-# Replication package for "International factors and inflation risks"
-Ignacio Garrón, Vladimir Rodruíguez-Caballero, and Esther Ruiz
+# Replication Package for *“International Factors and Inflation Risks”*  
+**Ignacio Garrón, Vladimir Rodríguez-Caballero, and Esther Ruiz**
 
-# Information about Replication package 
-- Date: November 30
-- Contact for reproducibility: Ignacio Garrón (igarron@est-econ.uc3m.es)
-- Structure: input, output, code, readme file.
+# Information about the Replication Package
+
+- **Date:** December 1, 2025  
+- **Structure:** *input*, *output*, *code*, *readme* file.
 
 # Contents
 
-The code in this replication material generates the 12 figures and 3 tables for 
-the paper "Evaluating Probabilistic Classifiers: The Triptych". Each figure and table 
-is generated separately by its corresponding script file 
+This replication package provides the code and data used to generate figures and tables in the paper *“International Factors and Inflation Risks.”*  
+Each figure and table is produced by a dedicated script:  
 *Figure_[xx]_.R* or *Table_[xx]_.R*, respectively.
 
-The main contents of the repository are the following:
+**IMPORTANT:** Due to GitHub’s file size limit (100 MB), to run all *Figure_[xx]_.R* and *Table_[xx]_.R* scripts, you must either unzip the files located in:
 
-## *Code/*
-Code/insample_RR.R: R scripts to create the in-sample forecasts for Tables
-and Figures in *Section 2: Data and in-sample analysis*. The output of this
-script is saved in *output/Data/*.
-Code/outofsample: R scripts to create the out-of-sample forecasts for Tables
-and Figures in *Section 3: Out-of-sample forecasts of inflation densities*.
-The output of this script is saved in *output/Data/*.
-Code/Figure_[xx]_*.R: R scripts to create the respective figures.
-Code/Table_[xx]_*.R: R scripts to create the respective tables.
-Code/prepare_raw_data_[xx]_*.R: R scripts to preper raw data.
+- *output/Data/list_h1_m1rr.RData.zip*  
+- *output/Data/list_h1_m2.RData.zip*  
+- *output/Data/list_h1_m3.RData.zip*
+
+or run:
+
+- *code/out_of_sample_01_forecasts.R*
+
+which automatically generates the required *.RData* files in the appropriate directories.
+
+The main components of the repository are described below.
+
+---
+
+## *code/*
+- **Code/in_sample_01_forecasts.R** – Creates the in-sample forecasts for the tables and figures in *Section 2: Data and In-Sample Analysis*. Output is saved in *output/Data/*.  
+- **Code/out_of_sample_01_forecasts.R** – Contains scripts to generate the out-of-sample forecasts for the tables and figures in *Section 3: Out-of-Sample Forecasts of Inflation Densities*. Output is saved in *output/Data/*.  
+- **Code/Figure_[xx]_*.R** – Scripts for generating each figure.  
+- **Code/Table_[xx]_*.R** – Scripts for generating each table.  
+- **Code/prepare_raw_data_[xx]_*.R** – Scripts for processing and preparing raw input data.
+
+---
 
 ## *output/*
-output/Figures/: folder of generated plots as PDF files.
-output/Tables/: folder of generated tables as txt files.
-output/Data/: folder of processed data files (in-sample and out-of-sample forcasts 
-for each model).
+- **output/Figures/** – Generated figures in PDF format.  
+- **output/Tables/** – Generated tables in TXT format.  
+- **output/Data/** – Processed datasets (both in-sample and out-of-sample forecasts for each model).
+
+---
 
 ## *input/*
-input/: folder of final data files that are used in the exercise
-input/data_raw: folder of raw data files.
+- **input/** – Finalized datasets used in the empirical analysis.  
+- **input/data_raw/** – Raw source data before processing.
 
-# Data availability and provenance
+---
 
-## Global inflation database
+# Instructions & Computational Requirements
 
-Monthly Headline CPI from January 1999 to December 2022 (𝑇 = 288) for a set of 𝑁 = 115 
-countries around the world from the novel Global Database on Inflation (GDI) 
-constructed by Ha et al. (2023). Downloaded on September 22, 2023. 
-Source: https://www.worldbank.org/en/research/brief/inflation-database.
+All file paths are relative to the root directory of the replication package.  
+Please set your working directory accordingly.
 
-## World Bank and IMF country classification
+The analysis scripts *Figure_[xx]_*.R and *Table_[xx]_*.R may be run independently and in any order.
 
-World Bank Group country classifications by income level for FY24 (July 1, 203-June
-30, 2024). The World Bank Group classifications are updated each year on July 1, based on the GNI per capita
-of the previous calendar year. Source: https://blogs.worldbank.org/en/opendata/new-world-bank-groupcountry-
-classifications-income-level-fy24.
+All analyses were executed using:
 
-## Datasets for cross-country heterogeneity
+- **R version 4.5.1 (2025-06-13)**  
+  Platform: aarch64-apple-darwin20  
+  OS: macOS Tahoe 26.0.1
 
-We construct a yearly database based on:
+The following R packages are explicitly used in the analysis:
 
-- World Development Indicators database: We use 1) Unemployment, total (% of total labor force) (national estimate)
-, 2) Trade (% of GDP) 3) GDP per capita growth (annual %), 4) GDP growth (annual %),
-5) Inflation, consumer prices (annual %). Source: https://databank.worldbank.org/source/world-development-indicators.
+ UComp_5.1.5          Rcpp_1.1.0           pcse_1.9.1.1         pEPA_1.2            
+ MCS_0.1.3            murphydiagram_0.12.2 sandwich_3.1-1       np_0.60-18          
+ writexl_1.5.4        viridis_0.6.5        viridisLite_0.4.2    sn_2.1.1            
+ quantreg_6.1         SparseM_1.84-2       forecast_8.24.0      openxlsx_4.2.8      
+ kableExtra_1.4.0     ggpubr_0.6.1         lubridate_1.9.4      forcats_1.0.0       
+ stringr_1.5.2        dplyr_1.1.4          purrr_1.1.0          readr_2.1.5         
+ tidyr_1.3.1          tibble_3.3.0         ggplot2_4.0.0        tidyverse_2.0.0  
 
-- Geopolitical risk database: We use the country geopolitical risk (GPR) index is obtained from Caldara and Iacoviello (2022).
+Additional built-in helper functions used across scripts are located in *code/functions/*.
+
+---
+
+# Data Availability and Provenance
+
+## Global Inflation Database
+
+Monthly headline CPI (January 1999–December 2022, 𝑇 = 288) for 𝑁 = 115 countries, obtained from the Global Database on Inflation (GDI)  
+developed by **Ha et al. (2023)**.  
+Downloaded: September 22, 2023  
+Source: https://www.worldbank.org/en/research/brief/inflation-database
+
+---
+
+## World Bank and IMF Country Classification
+
+World Bank Group income classifications for FY24 (July 1, 2023–June 30, 2024).  
+These classifications are updated each year on July 1, based on the previous year's GNI per capita.  
+Source:  
+https://blogs.worldbank.org/en/opendata/new-world-bank-group-country-classifications-income-level-fy24
+
+---
+
+## Datasets for Cross-Country Heterogeneity
+
+We compile an annual dataset using:
+
+### World Development Indicators (WDI)
+Variables used:  
+1. Unemployment, total (% of total labor force) (national estimate)  
+2. Trade (% of GDP)  
+3. GDP per capita growth (annual %)  
+4. GDP growth (annual %)  
+5. Inflation, consumer prices (annual %)  
+Source: https://databank.worldbank.org/source/world-development-indicators
+
+### Geopolitical Risk Database  
+Country-level GPR index from **Caldara and Iacoviello (2022)**.  
 Source: https://www.matteoiacoviello.com/gpr.htm
 
-- Central Bank Independence database: 1) We use the (CBIE) index as proposed by Romelli (2022).
-Source: https://cbidata.org/.
+### Central Bank Independence  
+CBIE index from **Romelli (2022)**.  
+Source: https://cbidata.org/
 
+---
 
-## Final or merged and processed datasets to be used in the exercise
+## Final Merged and Processed Datasets
 
-- The "input/data_complete_rev_xlsx"" contains the merge of the Global inflation data base,
-World Bank and IMF country classification and it is use to compute the monthly inflation series 
-and all the analysis.
+- **input/data_complete_rev.xlsx** – Merged dataset combining the Global Inflation Database,  
+  World Bank/IMF classifications, and computed monthly inflation series.  
+- **X.xlsx** – Annualized monthly inflation rates by country based on seasonally adjusted headline CPI (see main paper).  
+- **structure_dfm.xlsx** – Zero-restriction structure for the multilevel dynamic factor model (see main paper).
+- **data_gpr.xlsx** – Country geopolitical index from Caldara and Iacoviello (2022).
+- **CBIData_Romelli_2025.xlsx** – CBI from Romelli (2022).
+- **WDD** - Data from World Development Indicators.
+---
 
-- The "X.xlsx"" contains the annualized monthly inflation rates for each country in 
-columns based on the headline seasonal adjusted monthly CPI; see main paper.
+# References
 
-- The "structure_dfm.xlsx"" contains the zero restrictions applied to the
-multilevel-dynamic factor model; see main paper.
+- **Ha, J., Kose, M., & Ohnsorge, F. (2023).** *One-stop source: A global database of inflation.*  
+  *Journal of International Money and Finance*, 137:102896.
 
+- **Romelli, D. (2022).** *The political economy of reforms in central bank design: Evidence from a new data set.*  
+  *Economic Policy*, 37(112):641–688.
 
-
-
+- **Caldara, D., & Iacoviello, M. (2022).** *Measuring geopolitical risk.*  
+  *American Economic Review*, 112(4):1194–1225.

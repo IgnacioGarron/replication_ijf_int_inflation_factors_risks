@@ -5,3 +5,7 @@
 IJF-D-25-00050_R1.pdf
 Tables/*
 Documents/*
+# Ignore large RData archives
+output/Data/list_h1_m1rr.RData
+output/Data/list_h1_m2.RData.
+output/Data/list_h1_m3.RData.
