@@ -12,18 +12,6 @@ This replication package provides the code and data used to generate figures and
 Each figure and table is produced by a dedicated script:  
 *Figure_[xx]_.R* or *Table_[xx]_.R*, respectively.
 
-**IMPORTANT:** Due to GitHub’s file size limit (100 MB), to run all *Figure_[xx]_.R* and *Table_[xx]_.R* scripts, you must either unzip the files located in:
-
-- *output/Data/list_h1_m1rr.RData.zip*  
-- *output/Data/list_h1_m2.RData.zip*  
-- *output/Data/list_h1_m3.RData.zip*
-
-or run:
-
-- *code/out_of_sample_01_forecasts.R*
-
-which automatically generates the required *.RData* files in the appropriate directories.
-
 The main components of the repository are described below.
 
 ---
