@@ -20,9 +20,8 @@ The main components of the repository are described below.
 - **Code/in_sample_01_forecasts.R** – Creates the in-sample forecasts for the tables and figures in *Section 2: Data and In-Sample Analysis*. Output is saved in *output/Data/*.  
 - **Code/out_of_sample_01_forecasts.R** – Contains scripts to generate the out-of-sample forecasts for the tables and figures in *Section 3: Out-of-Sample Forecasts of Inflation Densities*. Output is saved in *output/Data/*.  
 - **Code/Figure_[xx]_*.R** – Scripts for generating each figure.  
-- **Code/Table_[xx]_*.R** – Scripts for generating each table.  
-- **Code/prepare_raw_data_[xx]_*.R** – Scripts for processing and preparing raw input data.
-
+- **Code/Table_[xx]_*.R** – Scripts for generating each table.
+  
 ---
 
 ## *output/*
