@@ -1,10 +1,12 @@
-# Replication Package for *“International Factors and Inflation Risks”*  
+# Replication Package for *“International factors and inflation risks”*  
 **Ignacio Garrón, Vladimir Rodríguez-Caballero, and Esther Ruiz**
 
 # Information about the Replication Package
 
 - **Date:** December 1, 2025  
 - **Structure:** *input*, *output*, *code*, *readme* file.
+- **Checks:** The package was reproduced by the Editor-in-Chief of the International Journal of Forecasting
+ on 13 December 2025.
 
 # Contents
 
