@@ -117,7 +117,7 @@ for (j in c(idx1_R1,idx1_R2,idx1_R3,idx1_R4)){
 }                                                                                                                                                                                                                     
 
 # save
-save(list_h1_mb,file ="../Data/list_h1_mb.RData")
+save(list_h1_mb,file ="../output/Data/list_h1_mb.RData")
 save(list_h1_m1,file ="../output/Data/list_h1_m1rr.RData")
 save(list_h1_m2,file ="../output/Data/list_h1_m2.RData")
 save(list_h1_m3,file ="../output/Data/list_h1_m3.RData")
